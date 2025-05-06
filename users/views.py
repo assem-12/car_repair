@@ -6,6 +6,7 @@ from .serializers import UserRegisterSerializer, UserLoginSerializer
 from django.contrib.auth import get_user_model
 from rest_framework.permissions import IsAdminUser
 
+
 User = get_user_model()
 
 class RegisterView(views.APIView):
@@ -38,4 +39,3 @@ class AdminOnlyView(views.APIView):
     permission_classes = [IsAdminUser]
     def get(self, request):
         return Response({"message": "You're an admin"})
-
